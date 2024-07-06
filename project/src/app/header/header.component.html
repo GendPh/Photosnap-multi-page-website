@@ -4,15 +4,15 @@
   <app-logo />
 
 
-  <nav class="hidden md:block text-link">
+  <nav class="hidden md:block">
     <ul class="flex gap-[37px]">
-      <li class="cursor-pointer">stories</li>
-      <li class="cursor-pointer">features</li>
-      <li class="cursor-pointer">pricing</li>
+      <li class="text-nav">stories</li>
+      <li class="text-nav">features</li>
+      <li class="text-nav">pricing</li>
     </ul>
   </nav>
 
-  <button class="hidden md:block btn dark">get an invite</button>
+  <button class="hidden md:block btn primary-dark">get an invite</button>
 
   <button class="block w-[16px] h-[15px] cursor-pointer md:hidden" id="menu-btn" (click)="menuService.toggleMenu()"
     [ngClass]="{'open':menuService.menuSignalState()}"></button>
@@ -20,16 +20,15 @@
 </header>
 
 <nav id="mobile-menu" [ngClass]="{'open':menuService.menuSignalState()}">
-  <ul>
-    <li (click)="menuService.closeMenu()" class="cursor-pointer w-fit mx-auto">stories</li>
-    <li (click)="menuService.closeMenu()" class="my-5 cursor-pointer w-fit mx-auto">features</li>
-    <li (click)="menuService.closeMenu()" class="cursor-pointer w-fit mx-auto">pricing</li>
+  <ul class="space-y-5">
+    <li (click)="menuService.closeMenu()" class="text-nav w-fit mx-auto">stories</li>
+    <li (click)="menuService.closeMenu()" class="text-nav w-fit mx-auto">features</li>
+    <li (click)="menuService.closeMenu()" class="text-nav w-fit mx-auto">pricing</li>
   </ul>
 
   <div class="my-5 h-[1px] bg-black/25"></div>
 
-  <button (click)="menuService.closeMenu()" class="btn dark">get an invite</button>
-
+  <button (click)="menuService.closeMenu()" class="btn primary-dark">get an invite</button>
 </nav>
 
 <div (click)="menuService.closeMenu()" id="mobile-menu-back-bg"></div>

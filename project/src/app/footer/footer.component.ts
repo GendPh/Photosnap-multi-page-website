@@ -11,4 +11,6 @@ import { SocialsComponent } from '../socials/socials.component';
 })
 export class FooterComponent {
 
+  public currentYear: number = new Date().getFullYear();
+
 }

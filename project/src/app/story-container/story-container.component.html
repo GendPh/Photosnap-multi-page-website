@@ -1,0 +1,33 @@
+<article
+  class="aspect-square lg:aspect-auto lg:h-[500px] w-full bg-black/50 relative text-white z-10 hover:z-20 transition-transform duration-150 lg:hover:-translate-y-6 group">
+  <img src="../../assets/stories/mobile/{{story.img}}.jpg" alt="mountain view"
+    class="absolute w-full h-full z-0 pointer-events-none lg:hidden">
+  <img src="../../assets/stories/desktop/{{story.img}}.jpg" alt="mountain view"
+    class="absolute w-full h-full z-0 pointer-events-none img-desktop">
+
+  <div class="h-full py-10 px-8 flex items-end relative bg-gradient-stories">
+    <div class="w-full">
+      <h3 class="heading-s mb-1">{{story.title}}</h3>
+      <p class="text-[13px]">by {{story.author}}</p>
+
+      <div class="h-[1px] bg-white/25 mt-4 mb-5"></div>
+
+      <button class="btn secondary w-full">
+        <span>
+          read story
+        </span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
+            <g fill="currentColor" fill-rule="evenodd" stroke="currentColor">
+              <path d="M0 7h41.864M35.428 1l6 6-6 6" />
+            </g>
+          </svg>
+        </span>
+      </button>
+
+    </div>
+  </div>
+
+  <div class="transition-all duration-300 absolute bottom-0 w-full h-[0px] group-hover:h-[6px] bg-gradient-custom">
+  </div>
+</article>

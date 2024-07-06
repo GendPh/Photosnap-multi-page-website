@@ -1,0 +1,37 @@
+<article [ngClass]="[backgroundColor, textColor, flexReverse]" class="md:flex justify-between">
+  <figure class="w-full md:max-w-[273px] lg:max-w-full block h-[294px] md:h-[650px]  bg-black/20">
+    <img src="../../assets/home/mobile/{{details.img}}.jpg" alt="man watching a river"
+      class="w-full h-full object-cover md:hidden">
+
+    <img src="../../assets/home/tablet/{{details.img}}.jpg" alt="man watching a river"
+      class="w-full h-full object-cover hidden md:block lg:hidden">
+
+    <img src="../../assets/home/desktop/{{details.img}}.jpg" alt="man watching a river"
+      class="w-full h-full object-cover hidden lg:block">
+  </figure>
+
+  <div class="px-[33px] md:px-0 pb-[72px] md:flex justify-center items-center max-w-[590px] ">
+    <div class="relative">
+      @if(showGradient){
+      <div class="w-[128px] md:w-[6px] h-[6px] md:h-full bg-gradient-custom absolute top-0"></div>
+      }
+      <div class="md:px-[54px] lg:px-[111px]">
+        <h2 class="pt-[72px] md:pt-0 heading-l">{{details.title}}</h2>
+        <p class="text-body mt-4 mb-[23px] opacity-60">{{details.description}}</p>
+
+        <button class="btn secondary">
+          <span>
+            {{details.btn}}
+          </span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
+              <g fill="currentColor" fill-rule="evenodd" stroke="currentColor">
+                <path d="M0 7h41.864M35.428 1l6 6-6 6" />
+              </g>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>

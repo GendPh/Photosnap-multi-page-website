@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-mobile-nav',
+  selector: 'app-stories',
   standalone: true,
   imports: [],
-  templateUrl: './mobile-nav.component.html',
+  templateUrl: './stories.component.html',
   styles: ``
 })
-export class MobileNavComponent {
+export class StoriesComponent {
 
 }

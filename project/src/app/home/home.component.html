@@ -1,0 +1,22 @@
+<main>
+    <section>
+    <app-hero-container [showGradient]="true" backgroundColor="bg-black" textColor="text-white" />
+    <app-hero-container [details]="hero[0]" flexReverse="flex-row" />
+    <app-hero-container [details]="hero[1]" />
+  </section>
+
+  <section class="grid md:grid-cols-2 lg:grid-cols-4">
+    <app-story-container />
+    <app-story-container [story]="stories[0]" />
+    <app-story-container [story]="stories[1]" />
+    <app-story-container [story]="stories[2]" />
+  </section>
+
+  <section
+    class="px-[33px] lg:px-[165px] py-20 md:py-[120px] bg-white flex flex-col lg:flex-row justify-center items-center gap-14 lg:gap-[30px]">
+    <app-feature />
+    <app-feature [feature]="features[0]" />
+    <app-feature [feature]="features[1]" />
+  </section>
+
+</main>

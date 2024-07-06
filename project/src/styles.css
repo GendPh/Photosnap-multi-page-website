@@ -5,8 +5,11 @@
 
 @layer base {
   body {
-    @apply font-DM;
+    @apply font-DM bg-white;
   }
+  /* main {
+    @apply min-h-screen;
+  } */
 
   #menu-btn {
     background-position: center;
@@ -22,10 +25,10 @@
   }
 
   #mobile-menu {
-    @apply md:hidden fixed z-40 bg-white w-full p-8 text-center text-link transition-all duration-300;
+    @apply md:hidden fixed z-40 bg-white w-full p-8 text-center transition-all duration-300;
 
     &:not(.open) {
-      @apply opacity-30 -translate-y-full;
+      @apply opacity-30 -translate-y-[200%];
     }
     &.open {
       @apply opacity-100 translate-y-0;
@@ -41,13 +44,13 @@
 
 @layer components {
   .heading-l {
-    @apply text-[40px] leading-[48px] tracking-[4.17px] font-bold;
+    @apply text-[32px] md:text-[40px] leading-[40px] md:leading-[48px] tracking-[3.33px] md:tracking-[4.17px] font-bold uppercase;
   }
   .heading-m {
     @apply text-[24px] leading-[25px] tracking-[0px] font-bold;
   }
   .heading-s {
-    @apply text-[18px] leading-[25px] tracking-[0px] font-bold;
+    @apply text-[18px] leading-[25px] tracking-[0px] font-bold capitalize;
   }
   .heading-xs {
     @apply text-[12px] leading-[16px] tracking-[2px] font-bold;
@@ -55,37 +58,72 @@
   .text-body {
     @apply text-[15px] leading-[25px] tracking-[0px] font-normal;
   }
-  .text-link {
-    @apply text-[15px] md:text-[12px] tracking-[2.5px] md:tracking-[2px] font-bold uppercase;
+  .text-nav {
+    @apply text-[15px] md:text-[12px] tracking-[2.5px] md:tracking-[2px] font-bold uppercase transition-opacity duration-150 hover:opacity-30 cursor-pointer;
   }
 
   .btn {
-    @apply max-w-[158px] min-w-fit py-[14px] px-6 uppercase text-link;
-    &.dark {
-      @apply bg-black text-white;
+    @apply min-w-fit text-[15px] md:text-[12px] tracking-[2.5px] md:tracking-[2px] font-bold py-[14px] px-6 uppercase transition-colors duration-300;
+    &.primary-dark {
+      @apply bg-black text-white hover:bg-Light-Grey hover:text-black;
     }
+    &.primary-light {
+      @apply bg-white text-black hover:bg-Light-Grey hover:text-black;
+    }
+    &.secondary {
+      @apply p-0 flex items-center justify-between gap-[22px] hover:underline underline-offset-2;
+    }
+  }
+
+  .img-mobile {
+    @apply md:hidden;
+  }
+  .img-tablet {
+    @apply hidden md:block lg:hidden;
+  }
+  .img-desktop {
+    @apply hidden lg:block;
   }
 
   .bg-gradient-custom {
     background: rgb(90, 119, 255);
     background: -moz-linear-gradient(
-      182deg,
+      181deg,
       rgba(90, 119, 255, 1) 0%,
       rgba(188, 113, 152, 1) 52%,
       rgba(255, 197, 147, 1) 100%
     );
     background: -webkit-linear-gradient(
-      182deg,
+      181deg,
       rgba(90, 119, 255, 1) 0%,
       rgba(188, 113, 152, 1) 52%,
       rgba(255, 197, 147, 1) 100%
     );
     background: linear-gradient(
-      182deg,
+      181deg,
       rgba(90, 119, 255, 1) 0%,
       rgba(188, 113, 152, 1) 52%,
       rgba(255, 197, 147, 1) 100%
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5a77ff",endColorstr="#ffc593",GradientType=1);
+  }
+  .bg-gradient-stories {
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.66) 100%
+    );
+    background: -webkit-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.66) 100%
+    );
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.66) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000",endColorstr="#000000a8",GradientType=1);
   }
 }
