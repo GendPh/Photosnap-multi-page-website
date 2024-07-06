@@ -1,3 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-DM;
+  }
+
+  #menu-btn {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @apply transition-all duration-300;
+    &:not(.open) {
+      background-image: url('assets/shared/mobile/menu.svg');
+    }
+    &.open {
+      background-image: url('assets/shared/mobile/close.svg');
+    }
+  }
+
+  #mobile-menu {
+    @apply md:hidden fixed z-40 bg-white w-full p-8 text-center text-link transition-all duration-300;
+
+    &:not(.open) {
+      @apply opacity-30 -translate-y-full;
+    }
+    &.open {
+      @apply opacity-100 translate-y-0;
+      & + #mobile-menu-back-bg {
+        @apply bg-black/50 pointer-events-auto;
+      }
+    }
+  }
+  #mobile-menu-back-bg {
+    @apply md:hidden bg-black/0 fixed inset-0 z-30 transition-colors duration-300 pointer-events-none;
+  }
+}
+
+@layer components {
+  .heading-l {
+    @apply text-[40px] leading-[48px] tracking-[4.17px] font-bold;
+  }
+  .heading-m {
+    @apply text-[24px] leading-[25px] tracking-[0px] font-bold;
+  }
+  .heading-s {
+    @apply text-[18px] leading-[25px] tracking-[0px] font-bold;
+  }
+  .heading-xs {
+    @apply text-[12px] leading-[16px] tracking-[2px] font-bold;
+  }
+  .text-body {
+    @apply text-[15px] leading-[25px] tracking-[0px] font-normal;
+  }
+  .text-link {
+    @apply text-[15px] md:text-[12px] tracking-[2.5px] md:tracking-[2px] font-bold uppercase;
+  }
+
+  .btn {
+    @apply max-w-[158px] min-w-fit py-[14px] px-6 uppercase text-link;
+    &.dark {
+      @apply bg-black text-white;
+    }
+  }
+
+  .bg-gradient-custom {
+    background: rgb(90, 119, 255);
+    background: -moz-linear-gradient(
+      182deg,
+      rgba(90, 119, 255, 1) 0%,
+      rgba(188, 113, 152, 1) 52%,
+      rgba(255, 197, 147, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      182deg,
+      rgba(90, 119, 255, 1) 0%,
+      rgba(188, 113, 152, 1) 52%,
+      rgba(255, 197, 147, 1) 100%
+    );
+    background: linear-gradient(
+      182deg,
+      rgba(90, 119, 255, 1) 0%,
+      rgba(188, 113, 152, 1) 52%,
+      rgba(255, 197, 147, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5a77ff",endColorstr="#ffc593",GradientType=1);
+  }
+}
