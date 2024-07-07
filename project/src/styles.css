@@ -7,9 +7,6 @@
   body {
     @apply font-DM bg-white;
   }
-  /* main {
-    @apply min-h-screen;
-  } */
 
   #menu-btn {
     background-position: center;
@@ -54,6 +51,9 @@
   }
   .heading-xs {
     @apply text-[12px] leading-[16px] tracking-[2px] font-bold;
+  }
+  .heading-xs-no-leading {
+    @apply text-[12px] tracking-[2px] font-bold;
   }
   .text-body {
     @apply text-[15px] leading-[25px] tracking-[0px] font-normal;

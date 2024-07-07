@@ -6,9 +6,9 @@
 
   <nav class="hidden md:block">
     <ul class="flex gap-[37px]">
-      <li class="text-nav">stories</li>
-      <li class="text-nav">features</li>
-      <li class="text-nav">pricing</li>
+      <li routerLink="/stories" class="text-nav">stories</li>
+      <li routerLink="/features" class="text-nav">features</li>
+      <li routerLink="/pricing" class="text-nav">pricing</li>
     </ul>
   </nav>
 
@@ -21,9 +21,9 @@
 
 <nav id="mobile-menu" [ngClass]="{'open':menuService.menuSignalState()}">
   <ul class="space-y-5">
-    <li (click)="menuService.closeMenu()" class="text-nav w-fit mx-auto">stories</li>
-    <li (click)="menuService.closeMenu()" class="text-nav w-fit mx-auto">features</li>
-    <li (click)="menuService.closeMenu()" class="text-nav w-fit mx-auto">pricing</li>
+    <li routerLink="/stories" (click)="menuService.closeMenu()" class="text-nav w-fit mx-auto">stories</li>
+    <li routerLink="/features" (click)="menuService.closeMenu()" class="text-nav w-fit mx-auto">features</li>
+    <li routerLink="/pricing" (click)="menuService.closeMenu()" class="text-nav w-fit mx-auto">pricing</li>
   </ul>
 
   <div class="my-5 h-[1px] bg-black/25"></div>

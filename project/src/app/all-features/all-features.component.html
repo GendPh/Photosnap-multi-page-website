@@ -1,0 +1,17 @@
+@if(showFirstThree){
+<section
+  class="animate-fade-in px-[33px] lg:px-[165px] py-20 md:py-[120px] bg-white flex flex-col lg:flex-row justify-center items-center gap-14 lg:gap-[30px]">
+  <app-feature [feature]="features[0]" />
+  <app-feature [feature]="features[1]" />
+  <app-feature [feature]="features[2]" />
+</section>
+}@else {
+<section
+  class="animate-fade-in px-[33px] lg:px-[165px] py-20 md:py-[120px] lg:py-[160px] bg-white grid gap-14 md:grid-cols-2 lg:grid-cols-3">
+  <div *ngFor=" let feature of features; let i=index" [ngClass]="{'lg:mb-[104px]' : i==2}">
+
+    <app-feature [feature]="feature" />
+
+  </div>
+</section>
+}

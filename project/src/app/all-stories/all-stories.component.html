@@ -1,0 +1,10 @@
+<section class="grid md:grid-cols-2 lg:grid-cols-4 animate-fade-in">
+  @if(showFirstFour){
+  <app-story-container [story]="stories[0]" [showDate]="false" />
+  <app-story-container [story]="stories[1]" [showDate]="false" />
+  <app-story-container [story]="stories[2]" [showDate]="false" />
+  <app-story-container [story]="stories[3]" [showDate]="false" />
+  }@else {
+  <app-story-container *ngFor="let story of stories" [story]="story" [showDate]="true" />
+  }
+</section>

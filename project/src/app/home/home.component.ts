@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeroContainerComponent } from '../hero-container/hero-container.component';
-import { StoryContainerComponent } from '../story-container/story-container.component';
 import { FeatureComponent } from '../feature/feature.component';
+import { AllStoriesComponent } from '../all-stories/all-stories.component';
+import { AllFeaturesComponent } from '../all-features/all-features.component';
 
 interface HomeDetails {
   img: string;
@@ -10,29 +11,24 @@ interface HomeDetails {
   description: string;
   btn: string;
 }
-interface Story {
-  img: string;
-  title: string;
-  author: string;
-}
-
-interface Feature {
-  img: string;
-  title: string;
-  description: string;
-}
-
-
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeroContainerComponent, StoryContainerComponent, FeatureComponent],
+  imports: [CommonModule, HeroContainerComponent, AllStoriesComponent, AllFeaturesComponent],
   templateUrl: './home.component.html',
   styles: ``
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  public showInfo: boolean = false;
+  public showContent = false;
+
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+
+    setTimeout(() => {
+      this.showContent = true;
+    }, 100);
+  }
 
   hero: HomeDetails[] = [
     {
@@ -48,35 +44,4 @@ export class HomeComponent {
       btn: 'view the stories'
     }
   ];
-
-  stories: Story[] = [
-    {
-      img: 'cityscapes',
-      title: 'Sunset Cityscapes',
-      author: 'Benjamin Cruz'
-    },
-    {
-      img: '18-days-voyage',
-      title: '18 Days Voyage',
-      author: 'Alexei Borodin'
-    },
-    {
-      img: 'architecturals',
-      title: 'Architecturals',
-      author: 'Samantha Brooke'
-    },
-  ]
-
-  features: Feature[] = [
-    {
-      img: 'no-limit',
-      title: 'No Photo Upload Limit',
-      description: 'Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.'
-    },
-    {
-      img: 'embed',
-      title: 'Available to Embed',
-      description: 'Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more. '
-    },
-  ]
 }

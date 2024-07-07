@@ -19,6 +19,7 @@
         <h2 class="pt-[72px] md:pt-0 heading-l">{{details.title}}</h2>
         <p class="text-body mt-4 mb-[23px] opacity-60">{{details.description}}</p>
 
+        @if(details.btn ){
         <button class="btn secondary">
           <span>
             {{details.btn}}
@@ -31,6 +32,7 @@
             </svg>
           </span>
         </button>
+        }
       </div>
     </div>
   </div>
