@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AllFeaturesComponent } from '../all-features/all-features.component';
 import { HeroContainerComponent } from '../hero-container/hero-container.component';
+import { BetaInviteComponent } from '../beta-invite/beta-invite.component';
 
 interface HomeDetails {
   img: string;
@@ -12,7 +13,7 @@ interface HomeDetails {
 @Component({
   selector: 'app-features',
   standalone: true,
-  imports: [HeroContainerComponent, AllFeaturesComponent,],
+  imports: [HeroContainerComponent, AllFeaturesComponent, BetaInviteComponent],
   templateUrl: './features.component.html',
   styles: ``
 })
@@ -31,7 +32,7 @@ export class FeaturesComponent implements OnInit {
   details: HomeDetails = {
     img: 'hero',
     title: 'FEATURES',
-    description: 'We make sure all of our features are designed to be loved by every aspiring and even professional photograpers who wanted to share their stories.',
+    description: 'We make sure all of our features are designed to be loved by every aspiring and even professional photographers who wanted to share their stories.',
     btn: ''
   }
 }

@@ -1,0 +1,27 @@
+<div
+  class="pt-14 pb-10 px-[22px] lg:px-10 bg-[#F5F5F5] text-black  relative grid md:grid-cols-2 lg:grid-cols-1 lg:max-w-[350px]"
+  [ngClass]="{'bg-black text-white lg:pt-[88px] lg:pb-[71px]': planChosen == plan}">
+
+  @if(planChosen == plan){
+  <div class="w-full h-[6px] bg-gradient-custom absolute top-0 left-0"></div>
+  }
+
+  <div class="text-center md:text-start lg:text-center md:max-w-[270px] lg:max-w-full">
+    <h3 class="heading-m mb-[18px]">{{plans[planIndex].title}}</h3>
+    <p class="text-body opacity-60">{{plans[planIndex].description}}</p>
+  </div>
+
+  <div class="text-center md:text-end lg:text-center ">
+    @if(isMonthly){
+    <h2 class="heading-xl mt-10 md:mt-0">${{plans[planIndex].monthlyPrice}}</h2>
+    }@else {
+    <h2 class="heading-xl mt-10 md:mt-0">${{plans[planIndex].yearlyPrice}}</h2>
+    }
+
+    <p class="text-body opacity-60">per month</p>
+  </div>
+
+  <button (click)="changePlan(plan)" class="btn w-full md:max-w-[270px] lg:max-w-full mt-10 primary-dark"
+    [ngClass]="{'primary-light': planChosen == plan}">pick
+    plan</button>
+</div>

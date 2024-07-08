@@ -1,3 +1,53 @@
 @if(showContent){
-<app-hero-container backgroundColor="bg-black" textColor="text-white" [details]="pricing" [showGradient]="true" />
+<section class="animate-fade-in">
+  <app-hero-container backgroundColor="bg-black" textColor="text-white" [details]="pricing" [showGradient]="true" />
+</section>
+
+<section class="px-7 my-16 animate-fade-in">
+  <div class="flex justify-center items-center gap-8 heading-s mb-10 lg:mb-20">
+    <p>Monthly</p>
+
+    <label class="switch">
+      <input type="checkbox" class="hidden" (change)="togglePriceMonthlyYearly()">
+      <span class="slider"></span>
+    </label>
+
+    <p class="text-black/50">Yearly</p>
+  </div>
+
+  <article class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-[30px] lg:max-w-[1110px] mx-auto">
+    <app-plans [planIndex]="0" plan="basic" [isMonthly]="isMonthly" [planChosen]="planChosen"
+      (planChosenChange)="receivePlanChosen($event)" />
+    <app-plans [planIndex]="1" plan="pro" [isMonthly]="isMonthly" [planChosen]="planChosen"
+      (planChosenChange)="receivePlanChosen($event)" />
+    <app-plans [planIndex]="2" plan="business" [isMonthly]="isMonthly" [planChosen]="planChosen"
+      (planChosenChange)="receivePlanChosen($event)" />
+  </article>
+</section>
+
+<section class="px-7 md:px-10 mb-16 lg:max-w-[731px] mx-auto animate-fade-in">
+
+  <h2 class="text-center hidden md:block mb-16 heading-l">Compare</h2>
+
+  <div class="pb-[23px] border-b border-b-black md:flex justify-between">
+    <h3 class="heading-xs-no-leading uppercase">the features</h3>
+    <div class="hidden md:flex gap-10">
+      <p>Basic</p>
+      <p>Pro</p>
+      <p>Business</p>
+    </div>
+  </div>
+
+  <app-pricing-features title="UNLIMITED STORY POSTING" [basicCheck]="true" [proCheck]="true" [businessCheck]="true" />
+  <app-pricing-features title="UNLIMITED PHOTO UPLOAD" [basicCheck]="true" [proCheck]="true" [businessCheck]="true" />
+  <app-pricing-features title="EMBEDDING CUSTOM CONTENT" [basicCheck]="false" [proCheck]="true"
+    [businessCheck]="true" />
+  <app-pricing-features title="CUSTOMIZE METADATA" [basicCheck]="false" [proCheck]="true" [businessCheck]="true" />
+  <app-pricing-features title="ADVANCED METRICS" [basicCheck]="false" [proCheck]="false" [businessCheck]="true" />
+  <app-pricing-features title="PHOTO DOWNLOADS" [basicCheck]="false" [proCheck]="false" [businessCheck]="true" />
+  <app-pricing-features title="SEARCH ENGINE INDEXING" [basicCheck]="false" [proCheck]="false" [businessCheck]="true" />
+  <app-pricing-features title="CUSTOM ANALYTICS" [basicCheck]="false" [proCheck]="false" [businessCheck]="true" />
+</section>
+
+<app-beta-invite />
 }
